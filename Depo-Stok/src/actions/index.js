@@ -198,4 +198,28 @@ export const artılarıSilme2 = (enn, id, değer) => {
     değer,
   };
 };
+export const girişDeğiş = (person) => {
+  return {
+    type: "GİRİŞ_DEĞİŞ",
+    payload: person,
+  };
+};
+export const çıkışDeğiş = (person) => {
+  return {
+    type: "ÇIKIŞ_DEĞİŞ",
+    payload: person,
+  };
+};
+export const işlemDeğiş = (person) => {
+  return {
+    type: "İŞLEM_DEĞİŞ",
+    payload: person,
+  };
+};
+export const kullanıcıEkle = (person) => {
+  return {
+    type: "KULLANICI_EKLE",
+    payload: person,
+  };
+};
 

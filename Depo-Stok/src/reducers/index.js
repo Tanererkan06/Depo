@@ -179,8 +179,6 @@ export const reducer = (state = INITIAL_STATE, action) => {
       };
 
     case "BELGE_EKLE":
-      console.log(action);
-
       return {
         ...state,
       };
@@ -232,7 +230,6 @@ export const reducer = (state = INITIAL_STATE, action) => {
       };
 
     case "SON_EKLEME":
-      console.log("son ekleme");
       return {
         ...state,
 
@@ -256,7 +253,6 @@ export const reducer = (state = INITIAL_STATE, action) => {
         alınıyor: [],
       };
     case "SON_EKLEME2":
-      console.log("son ekleme");
       return {
         ...state,
 
@@ -281,14 +277,10 @@ export const reducer = (state = INITIAL_STATE, action) => {
       };
 
     case "EKLEME_HATASI":
-      console.log("hata");
-
       return {
         ...state,
       };
     case "EKLEME_HATASI2":
-      console.log("hata2");
-
       return {
         ...state,
       };
@@ -304,14 +296,12 @@ export const reducer = (state = INITIAL_STATE, action) => {
       };
 
     case "LİNK":
-      console.log(action.payload);
       return {
         ...state,
         alınıyor2: action.payload,
       };
 
     case "LİNK2":
-      console.log(action.payload);
       return {
         ...state,
         satılıyor2: action.payload,
@@ -340,7 +330,6 @@ export const reducer = (state = INITIAL_STATE, action) => {
       };
 
     case "ARTILARI_SİLME":
-      console.log(action);
       return {
         ...state,
         data: state.data.map((içerik) =>
@@ -354,7 +343,6 @@ export const reducer = (state = INITIAL_STATE, action) => {
       };
 
     case "ARTILARI_SİLME2":
-      console.log(action);
       return {
         ...state,
         data: state.data.map((içerik) =>
@@ -365,6 +353,41 @@ export const reducer = (state = INITIAL_STATE, action) => {
               }
             : { ...içerik }
         ),
+      };
+
+    case "GİRİŞ_DEĞİŞ":
+      return {
+        ...state,
+        personel: state.personel.map((pers) =>
+          pers.kullanıcıAdı === action.payload
+            ? { ...pers, giriş: !pers.giriş }
+            : { ...pers }
+        ),
+      };
+
+    case "ÇIKIŞ_DEĞİŞ":
+      return {
+        ...state,
+        personel: state.personel.map((pers) =>
+          pers.kullanıcıAdı === action.payload
+            ? { ...pers, çıkış: !pers.çıkış }
+            : { ...pers }
+        ),
+      };
+
+    case "İŞLEM_DEĞİŞ":
+      return {
+        ...state,
+        personel: state.personel.map((pers) =>
+          pers.kullanıcıAdı === action.payload
+            ? { ...pers, işlemler: !pers.işlemler }
+            : { ...pers }
+        ),
+      };
+    case "KULLANICI_EKLE":
+      return {
+        ...state,
+
       };
 
     default:

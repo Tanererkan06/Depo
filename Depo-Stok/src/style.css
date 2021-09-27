@@ -22,3 +22,9 @@
   padding-bottom: 0px;
   margin-bottom: 0px;
 }
+.disabled-link {
+  pointer-events: none;}
+
+  .personelEkle{
+    background-color: rgba(34, 92, 126, 0.288);
+  }

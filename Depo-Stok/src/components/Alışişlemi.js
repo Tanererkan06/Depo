@@ -2,7 +2,6 @@ import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
-
 import {
   sil,
   giriş,
@@ -17,6 +16,8 @@ import {
 } from "../actions";
 
 const Alışişlemi = (props) => {
+
+  let aa = props.mydata.kullanıcı.yetkilendirme ? " to='/işlemler'"  : ""
 
 
  let alış = props.mydata.yapılanAlışlar.find((alış)=>
@@ -86,9 +87,9 @@ const Alışişlemi = (props) => {
       <div className="m-4">
         <Link
           to="/işlemler"
-          className={` ${
-            props.mydata.kullanıcı.yetkilendirme ? "" : "disabled"
-          } `}
+          className={
+            props.mydata.kullanıcı.yetkilendirme ? " " : "disabled-link"
+          }
         >
           <button
             className={`m-2 btn btn-danger ${
@@ -109,9 +110,7 @@ const Alışişlemi = (props) => {
                     ).innerHTML
                   );
                 }
-
                 props.alışİşlemiSilme();
-                window.location.href = "/işlemler";
               }
             }}
           >

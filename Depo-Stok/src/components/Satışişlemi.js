@@ -73,7 +73,7 @@ const Satışişlemi = (props) => {
                   <img width={"40"} src={item.fotograf} />
                 </td>
                 <td>{item.sınıf}</td>
-                <td>{item.artı}</td>
+                <td>{item.eksi}</td>
                 <td>{item.birim}</td>
               </tr>
             ))}
@@ -82,12 +82,22 @@ const Satışişlemi = (props) => {
       </div>
 
       <div className="m-4">
-        <Link to="/işlemler">
+        <Link
+          to="/işlemler"
+          className={`${
+            props.mydata.kullanıcı.yetkilendirme ? "" : "disabled"
+          } `}
+        >
           <button
             className={`m-2 btn btn-danger ${
               props.mydata.kullanıcı.yetkilendirme ? "" : "disabled"
             } `}
             onClick={(enn) => {
+              console.log(
+                document.querySelector(
+                  `.deneme3 > tr:nth-child(1 ) > td:nth-child(5)`
+                ).innerHTML
+              );
               if (
                 window.confirm("Belgeyi silmek istediğinizden emin misiniz ?")
               ) {

@@ -25,7 +25,10 @@ const App = (props) => {
             </button>
           </Link>
 
-          <Link to="/alış">
+          <Link
+            className={props.mydata.kullanıcı.giriş ? " " : "disabled-link"}
+            to="/alış"
+          >
             <button
               className={`btn btn-primary ${
                 props.mydata.kullanıcı.giriş ? " " : "disabled"
@@ -35,7 +38,10 @@ const App = (props) => {
             </button>
           </Link>
 
-          <Link to="/satış">
+          <Link
+            to="/satış"
+            className={props.mydata.kullanıcı.çıkış ? " " : "disabled-link"}
+          >
             <button
               className={`btn btn-primary ${
                 props.mydata.kullanıcı.çıkış ? " " : "disabled"
@@ -45,7 +51,10 @@ const App = (props) => {
             </button>
           </Link>
 
-          <Link to="/işlemler">
+          <Link
+            to="/işlemler"
+            className={props.mydata.kullanıcı.işlemler ? " " : "disabled-link"}
+          >
             <button
               className={`btn btn-primary ${
                 props.mydata.kullanıcı.işlemler ? "" : "disabled"
@@ -55,6 +64,11 @@ const App = (props) => {
             </button>
           </Link>
 
+
+
+          <Link
+            to="/yetkilendirme">
+
           <button
             className={`btn btn-primary ${
               props.mydata.kullanıcı.yetkilendirme ? "" : "d-none"
@@ -62,6 +76,11 @@ const App = (props) => {
           >
             <span>Yetkilendirme</span>
           </button>
+
+          </Link>
+
+
+
 
           <button
             onClick={() => {
