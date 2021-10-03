@@ -75,6 +75,7 @@ export const reducer = (state = INITIAL_STATE, action) => {
     case "KALK":
       return {
         ...state,
+        
         giriş: false,
         kullanıcı: {
   kullanıcıAdı:null,
