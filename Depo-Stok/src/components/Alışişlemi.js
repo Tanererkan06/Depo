@@ -71,7 +71,7 @@ const Alışişlemi = (props) => {
                 <th>{item.id}</th>
                 <td>{item.ürün}</td>
                 <td>
-                  <img width={"40"} src={item.fotograf} />
+                  <img className="listemm" width={"40"} src={item.fotograf} />
                 </td>
                 <td>{item.sınıf}</td>
                 <td>{item.artı}</td>
@@ -94,75 +94,68 @@ const Alışişlemi = (props) => {
               props.mydata.kullanıcı.yetkilendirme ? "" : "disabled"
             } `}
             onClick={(enn) => {
-let eksi = 0
-              
+              let eksi = 0;
+
               for (let i = 1; i < alış[1].length + 1; i++) {
-                if(
-                props.mydata.data.find(
-                  (kontrol) =>
-                    kontrol.id ===
+                if (
+                  props.mydata.data.find(
+                    (kontrol) =>
+                      kontrol.id ===
+                      document.querySelector(
+                        `.deneme3 > tr:nth-child( ${i} ) > th:nth-child(1)`
+                      ).innerHTML
+                  ).stok <
+                  Number(
                     document.querySelector(
-                      `.deneme3 > tr:nth-child( ${i} ) > th:nth-child(1)`
+                      `.deneme3 > tr:nth-child( ${i} ) > td:nth-child(5)`
                     ).innerHTML
-                ).stok <
-                  Number(document.querySelector(
-                    `.deneme3 > tr:nth-child( ${i} ) > td:nth-child(5)`
-                  ).innerHTML)){
-                    eksi = 1
-                break}
-
+                  )
+                ) {
+                  eksi = 1;
+                  break;
+                }
               }
-
 
               if (eksi === 0) {
-
-              if (
-                window.confirm("Belgeyi silmek istediğinizden emin misiniz ?")
-              ) {
-                for (let i = 1; i < alış[1].length + 1; i++) {
-                  props.artılarıSilme(
-                    enn,
-                    document.querySelector(
-                      `.deneme3 > tr:nth-child( ${i} ) > th:nth-child(1)`
-                    ).innerHTML,
-                    document.querySelector(
-                      `.deneme3 > tr:nth-child( ${i} ) > td:nth-child(5)`
-                    ).innerHTML
-                  );
+                if (
+                  window.confirm("Belgeyi silmek istediğinizden emin misiniz ?")
+                ) {
+                  for (let i = 1; i < alış[1].length + 1; i++) {
+                    props.artılarıSilme(
+                      enn,
+                      document.querySelector(
+                        `.deneme3 > tr:nth-child( ${i} ) > th:nth-child(1)`
+                      ).innerHTML,
+                      document.querySelector(
+                        `.deneme3 > tr:nth-child( ${i} ) > td:nth-child(5)`
+                      ).innerHTML
+                    );
+                  }
+                  props.alışİşlemiSilme();
                 }
-                props.alışİşlemiSilme();
               }
-
-
-              }
-
 
               if (eksi === 1) {
-eksi = 0
-              if (
-                window.confirm("Bu belgeyi silerseniz bazı ürünler eksi (-) 'ye düşecek. yine de bu belgeyi silmek istiyor musunuz ?")
-              ) {
-                for (let i = 1; i < alış[1].length + 1; i++) {
-                  props.artılarıSilme(
-                    enn,
-                    document.querySelector(
-                      `.deneme3 > tr:nth-child( ${i} ) > th:nth-child(1)`
-                    ).innerHTML,
-                    document.querySelector(
-                      `.deneme3 > tr:nth-child( ${i} ) > td:nth-child(5)`
-                    ).innerHTML
-                  );
+                eksi = 0;
+                if (
+                  window.confirm(
+                    "Bu belgeyi silerseniz bazı ürünler eksi (-) 'ye düşecek. yine de bu belgeyi silmek istiyor musunuz ?"
+                  )
+                ) {
+                  for (let i = 1; i < alış[1].length + 1; i++) {
+                    props.artılarıSilme(
+                      enn,
+                      document.querySelector(
+                        `.deneme3 > tr:nth-child( ${i} ) > th:nth-child(1)`
+                      ).innerHTML,
+                      document.querySelector(
+                        `.deneme3 > tr:nth-child( ${i} ) > td:nth-child(5)`
+                      ).innerHTML
+                    );
+                  }
+                  props.alışİşlemiSilme();
                 }
-                props.alışİşlemiSilme();
               }
-
-
-              }
-
-
-
-
-
             }}
           >
             Belgeyi Sil

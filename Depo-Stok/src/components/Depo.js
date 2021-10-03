@@ -29,7 +29,7 @@ import { connect } from "react-redux";
                 <td>{item.birim}</td>
                 <td>{item.sınıf}</td>
                 <td>
-                  <img width={"40"} src={item.fotograf} />
+                  <img className="listemm" width={"40"} src={item.fotograf} />
                 </td>
               </tr>
             ))}

@@ -67,3 +67,7 @@ body{
   border: 1px solid transparent;
   background-color: rgba(0, 153, 255, 0.295);
 }
+
+.listemm:hover {
+  transform: scale(7); 
+}

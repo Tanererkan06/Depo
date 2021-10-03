@@ -70,7 +70,7 @@ const Satışişlemi = (props) => {
                 <th>{item.id}</th>
                 <td>{item.ürün}</td>
                 <td>
-                  <img width={"40"} src={item.fotograf} />
+                  <img className="listemm" width={"40"} src={item.fotograf} />
                 </td>
                 <td>{item.sınıf}</td>
                 <td>{item.eksi}</td>

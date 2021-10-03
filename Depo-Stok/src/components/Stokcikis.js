@@ -197,7 +197,7 @@ const Stokcikis = (props) => {
                 <th>{item.id}</th>
                 <td>{item.ürün}</td>
                 <td>
-                  <img width={"40"} src={item.fotograf} />
+                  <img className="listemm" width={"40"} src={item.fotograf} />
                 </td>
                 <td>{item.sınıf}</td>
                 <td>
@@ -256,31 +256,34 @@ const Stokcikis = (props) => {
                   break;
                 }
 
-                if (Number(
-                        document.querySelector(
-                          `.deneme2 > tr:nth-child( ${i} ) > td:nth-child(7) > div > input`
-                        ).value
-                      ) > Number(
-                          document.querySelector(
-                            `.deneme2 > tr:nth-child( ${i} ) > td:nth-child(6)`
-                          ).innerHTML
-                        ) ) {
-                     alert(
-                       "Lütfen stogunuzdaki miktardan az giriş yapın"
-                     );
-                     boş = 1;
-                     break
-                  }
+                if (
+                  Number(
+                    document.querySelector(
+                      `.deneme2 > tr:nth-child( ${i} ) > td:nth-child(7) > div > input`
+                    ).value
+                  ) >
+                  Number(
+                    document.querySelector(
+                      `.deneme2 > tr:nth-child( ${i} ) > td:nth-child(6)`
+                    ).innerHTML
+                  )
+                ) {
+                  alert("Lütfen stogunuzdaki miktardan az giriş yapın");
+                  boş = 1;
+                  break;
+                }
 
-                  if (document.querySelector(
+                if (
+                  document.querySelector(
                     `.deneme2 > tr:nth-child( ${i} ) > td:nth-child(7) > div > input`
-                  ).value === "0" ) {
-                     alert(
-                       "Lütfen mikratı 0 olan ürünü çıkarın veya miktarı arttırın"
-                     );
-                     boş = 1;
-                     break
-                  }
+                  ).value === "0"
+                ) {
+                  alert(
+                    "Lütfen mikratı 0 olan ürünü çıkarın veya miktarı arttırın"
+                  );
+                  boş = 1;
+                  break;
+                }
               }
 
               if (boş === 1) {
@@ -320,7 +323,6 @@ const Stokcikis = (props) => {
                 }
               }
             };
-
 
             let BelgeVarMı = 0;
 
