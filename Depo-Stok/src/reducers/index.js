@@ -76,6 +76,14 @@ export const reducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         giriş: false,
+        kullanıcı: {
+  kullanıcıAdı:null,
+  şifre: null,
+  giriş: false,
+  çıkış: false,
+  işlemler: false,
+  yetkilendirme: false,
+}
       };
 
     case "SIL":

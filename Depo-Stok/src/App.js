@@ -72,17 +72,15 @@ const App = (props) => {
               </button>
             </Link>
 
-            <Link  to="/yetkilendirme">
+            <Link to="/yetkilendirme">
               <button
-                className={`btn btn-primary ${
+                className={`btn btn-warning ${
                   props.mydata.kullanıcı.yetkilendirme ? "" : "d-none"
                 } `}
               >
                 <span>Yetkilendirme</span>
               </button>
             </Link>
-
-
           </div>
         </nav>
 

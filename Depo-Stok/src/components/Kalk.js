@@ -34,6 +34,7 @@ const Kalk = (props) => {
           {props.mydata.kullanıcı.kullanıcıAdı}
         </span>
       </div>
+      
       <Link
         to="/"
         style={{
