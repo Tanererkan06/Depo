@@ -10,22 +10,25 @@ const Personel = (props) => {
 
   return (
     <div>
-      <form onSubmit={(e)=> {
-        e.preventDefault()
-        props.giriş(e, kulla, şifr)
-        setKulla("")
-        setŞifr("")
-      }
-        }>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          props.giriş(e, kulla, şifr);
+          setKulla("");
+          setŞifr("");
+        }}
+      >
         <input
           className="d-block"
           type="name"
           placeholder="kullanıcı Adı"
           value={kulla}
           onChange={(e) => setKulla(e.target.value)}
+          style={{ width: "150px" }}
         />
 
         <input
+          style={{ width: "150px" }}
           className="d-block"
           type="password"
           placeholder="Şifre"
@@ -36,9 +39,6 @@ const Personel = (props) => {
         <button type="submit" className="w-100 btn btn-primary">
           Gönder
         </button>
-
-
-    
       </form>
     </div>
   );

@@ -216,10 +216,19 @@ export const işlemDeğiş = (person) => {
     payload: person,
   };
 };
-export const kullanıcıEkle = (person) => {
+export const kullanıcıEkle = (kullanıcı, girş, çıkş, işlm) => {
   return {
     type: "KULLANICI_EKLE",
-    payload: person,
+    payload: kullanıcı,
+    girş,
+    çıkş,
+    işlm,
+  };
+};
+export const personeliSil = (kullanıcıAdı) => {
+  return {
+    type: "PERSONELİ_SİL",
+    payload: kullanıcıAdı,
   };
 };
 

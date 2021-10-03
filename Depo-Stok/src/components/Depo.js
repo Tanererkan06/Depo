@@ -3,10 +3,10 @@ import { connect } from "react-redux";
 
  const Depo = (props) => {
     return (
-      <div>
+      <div className="depoo">
         <br />
-    
-        <h2>Depoda Bulunan Envanterler</h2>
+
+        <h2 className="anaBaşlık">Depoda Bulunan Envanterler</h2>
 
         <table className="table">
           <thead>
@@ -21,7 +21,7 @@ import { connect } from "react-redux";
           </thead>
 
           <tbody>
-            {props.mydata.data.map((item) => ( 
+            {props.mydata.data.map((item) => (
               <tr key={Math.random()}>
                 <th>{item.id}</th>
                 <td>{item.ürün}</td>
@@ -35,9 +35,8 @@ import { connect } from "react-redux";
             ))}
           </tbody>
         </table>
-      
-       </div>
-    )
+      </div>
+    );
 }
 
 const mapStateToProps = (state) => {

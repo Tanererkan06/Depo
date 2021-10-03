@@ -16,13 +16,11 @@ import {
 } from "../actions";
 
 const Alışişlemi = (props) => {
+  let aa = props.mydata.kullanıcı.yetkilendirme ? " to='/işlemler'" : "";
 
-  let aa = props.mydata.kullanıcı.yetkilendirme ? " to='/işlemler'"  : ""
-
-
- let alış = props.mydata.yapılanAlışlar.find((alış)=>
-   alış[0].belgeNo === props.mydata.alınıyor2
-  )
+  let alış = props.mydata.yapılanAlışlar.find(
+    (alış) => alış[0].belgeNo === props.mydata.alınıyor2
+  );
 
   return (
     <div>
@@ -96,6 +94,28 @@ const Alışişlemi = (props) => {
               props.mydata.kullanıcı.yetkilendirme ? "" : "disabled"
             } `}
             onClick={(enn) => {
+let eksi = 0
+              
+              for (let i = 1; i < alış[1].length + 1; i++) {
+                if(
+                props.mydata.data.find(
+                  (kontrol) =>
+                    kontrol.id ===
+                    document.querySelector(
+                      `.deneme3 > tr:nth-child( ${i} ) > th:nth-child(1)`
+                    ).innerHTML
+                ).stok <
+                  Number(document.querySelector(
+                    `.deneme3 > tr:nth-child( ${i} ) > td:nth-child(5)`
+                  ).innerHTML)){
+                    eksi = 1
+                break}
+
+              }
+
+
+              if (eksi === 0) {
+
               if (
                 window.confirm("Belgeyi silmek istediğinizden emin misiniz ?")
               ) {
@@ -112,6 +132,37 @@ const Alışişlemi = (props) => {
                 }
                 props.alışİşlemiSilme();
               }
+
+
+              }
+
+
+              if (eksi === 1) {
+eksi = 0
+              if (
+                window.confirm("Bu belgeyi silerseniz bazı ürünler eksi (-) 'ye düşecek. yine de bu belgeyi silmek istiyor musunuz ?")
+              ) {
+                for (let i = 1; i < alış[1].length + 1; i++) {
+                  props.artılarıSilme(
+                    enn,
+                    document.querySelector(
+                      `.deneme3 > tr:nth-child( ${i} ) > th:nth-child(1)`
+                    ).innerHTML,
+                    document.querySelector(
+                      `.deneme3 > tr:nth-child( ${i} ) > td:nth-child(5)`
+                    ).innerHTML
+                  );
+                }
+                props.alışİşlemiSilme();
+              }
+
+
+              }
+
+
+
+
+
             }}
           >
             Belgeyi Sil

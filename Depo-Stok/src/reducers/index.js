@@ -385,9 +385,26 @@ export const reducer = (state = INITIAL_STATE, action) => {
         ),
       };
     case "KULLANICI_EKLE":
+      console.log(action);
       return {
         ...state,
-
+        personel: [
+          ...personel,
+          {
+            kullanıcıAdı: action.payload,
+            şifre: "asdfasdf",
+            giriş: action.girş,
+            çıkış: action.çıkş,
+            işlemler: action.işlm,
+            yetkilendirme: false,
+          },
+        ],
+      };
+    case "PERSONELİ_SİL":
+      return {
+        ...state,
+        personel: state.personel.filter((pers)=>
+        pers.kullanıcıAdı!==action.payload)
       };
 
     default:

@@ -36,9 +36,9 @@ const DepoGiriş = (props) => {
 
 
   return (
-    <div>
+    <div >
       <br />
-      <h2>Satın Alma Belgesi Girişi</h2>
+      <h2 className="anaBaşlık">Satın Alma Belgesi Girişi</h2>
       <div
         style={{
           margin: "20px",

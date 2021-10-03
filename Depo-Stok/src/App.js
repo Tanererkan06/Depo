@@ -12,87 +12,84 @@ import Kalk from "./components/Kalk";
 import Alışişlemi from "./components/Alışişlemi";
 import Satışişlemi from "./components/Satışişlemi";
 import { Link } from "react-router-dom";
+import depo from "../src/depo.png"
 
 const App = (props) => {
 
   return (
     <div className="App">
-      <nav className="navbar ">
-        <div className="">
-          <Link to="/">
-            <button className={"btn btn-primary"}>
-              <span>Depo</span>
-            </button>
-          </Link>
-
-          <Link
-            className={props.mydata.kullanıcı.giriş ? " " : "disabled-link"}
-            to="/alış"
-          >
-            <button
-              className={`btn btn-primary ${
-                props.mydata.kullanıcı.giriş ? " " : "disabled"
-              }`}
-            >
-              <span>Alış</span>
-            </button>
-          </Link>
-
-          <Link
-            to="/satış"
-            className={props.mydata.kullanıcı.çıkış ? " " : "disabled-link"}
-          >
-            <button
-              className={`btn btn-primary ${
-                props.mydata.kullanıcı.çıkış ? " " : "disabled"
-              } `}
-            >
-              <span>Satış</span>
-            </button>
-          </Link>
-
-          <Link
-            to="/işlemler"
-            className={props.mydata.kullanıcı.işlemler ? " " : "disabled-link"}
-          >
-            <button
-              className={`btn btn-primary ${
-                props.mydata.kullanıcı.işlemler ? "" : "disabled"
-              } `}
-            >
-              <span>İşlemler</span>
-            </button>
-          </Link>
-
-
-
-          <Link
-            to="/yetkilendirme">
-
-          <button
-            className={`btn btn-primary ${
-              props.mydata.kullanıcı.yetkilendirme ? "" : "d-none"
-            } `}
-          >
-            <span>Yetkilendirme</span>
-          </button>
-
-          </Link>
-
-
-
-
-          <button
-            onClick={() => {
-              console.log(props.mydata);
-            }}
-          >
-            <span>state</span>
-          </button>
+      <div className="Apply">
+        <div className="logo">
+          <img src={depo} alt="" />
         </div>
 
-        <div>{props.mydata.giriş ? <Kalk /> : <Personel />}</div>
-      </nav>
+        <nav className="navbar ">
+          <div className="">
+            <Link to="/">
+              <button className="btn btn-primary">
+                <span>Depo</span>
+              </button>
+            </Link>
+
+            <Link
+              to="/alış"
+              className={props.mydata.kullanıcı.giriş ? " " : "disabled-link"}
+            >
+              <button
+                className={`btn btn-primary ${
+                  props.mydata.kullanıcı.giriş ? " " : "disabled"
+                } `}
+              >
+                <span>Alış</span>
+              </button>
+            </Link>
+
+            <Link
+              to="/satış"
+              className={props.mydata.kullanıcı.çıkış ? " " : "disabled-link"}
+            >
+              <button
+                className={`btn btn-primary ${
+                  props.mydata.kullanıcı.çıkış ? " " : "disabled"
+                } `}
+              >
+                <span>Satış</span>
+              </button>
+            </Link>
+
+            <Link
+              to="/işlemler"
+              className={
+                props.mydata.kullanıcı.işlemler ? " " : "disabled-link"
+              }
+            >
+              <button
+                className={`btn btn-primary ${
+                  props.mydata.kullanıcı.işlemler ? "" : "disabled"
+                } `}
+              >
+                <span>İşlemler</span>
+              </button>
+            </Link>
+
+            <Link  to="/yetkilendirme">
+              <button
+                className={`btn btn-primary ${
+                  props.mydata.kullanıcı.yetkilendirme ? "" : "d-none"
+                } `}
+              >
+                <span>Yetkilendirme</span>
+              </button>
+            </Link>
+
+
+          </div>
+        </nav>
+
+        <div className="login">
+          {props.mydata.giriş ? <Kalk /> : <Personel />}
+        </div>
+      </div>
 
       <Route
         path={`/işlemler/alış_${props.mydata.alınıyor2}`.toLowerCase()}

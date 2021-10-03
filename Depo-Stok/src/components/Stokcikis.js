@@ -256,11 +256,15 @@ const Stokcikis = (props) => {
                   break;
                 }
 
-                if (document.querySelector(
-                    `.deneme2 > tr:nth-child( ${i} ) > td:nth-child(7) > div > input`
-                  ).value > document.querySelector(
-                    `.deneme2 > tr:nth-child( ${i} ) > td:nth-child(6)`
-                  ).innerHTML ) {
+                if (Number(
+                        document.querySelector(
+                          `.deneme2 > tr:nth-child( ${i} ) > td:nth-child(7) > div > input`
+                        ).value
+                      ) > Number(
+                          document.querySelector(
+                            `.deneme2 > tr:nth-child( ${i} ) > td:nth-child(6)`
+                          ).innerHTML
+                        ) ) {
                      alert(
                        "Lütfen stogunuzdaki miktardan az giriş yapın"
                      );
@@ -316,6 +320,8 @@ const Stokcikis = (props) => {
                 }
               }
             };
+
+
             let BelgeVarMı = 0;
 
             props.mydata.yapılanSatışlar.find((alış) =>
