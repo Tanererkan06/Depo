@@ -31,9 +31,7 @@ const INITIAL_STATE = {
   yapılanSatışlar,
 };
 
-
 export const reducer = (state = INITIAL_STATE, action) => {
-
   switch (action.type) {
     case "GİRİŞ":
       {
@@ -75,16 +73,16 @@ export const reducer = (state = INITIAL_STATE, action) => {
     case "KALK":
       return {
         ...state,
-        
+
         giriş: false,
         kullanıcı: {
-  kullanıcıAdı:null,
-  şifre: null,
-  giriş: false,
-  çıkış: false,
-  işlemler: false,
-  yetkilendirme: false,
-}
+          kullanıcıAdı: null,
+          şifre: null,
+          giriş: false,
+          çıkış: false,
+          işlemler: false,
+          yetkilendirme: false,
+        },
       };
 
     case "SIL":
@@ -412,8 +410,9 @@ export const reducer = (state = INITIAL_STATE, action) => {
     case "PERSONELİ_SİL":
       return {
         ...state,
-        personel: state.personel.filter((pers)=>
-        pers.kullanıcıAdı!==action.payload)
+        personel: state.personel.filter(
+          (pers) => pers.kullanıcıAdı !== action.payload
+        ),
       };
 
     default:
