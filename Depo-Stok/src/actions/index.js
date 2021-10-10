@@ -231,4 +231,10 @@ export const personeliSil = (kullanıcıAdı) => {
     payload: kullanıcıAdı,
   };
 };
+export const urun2 = (seri) => {
+  return {
+    type: "URUN2",
+    payload: seri,
+  };
+};
 

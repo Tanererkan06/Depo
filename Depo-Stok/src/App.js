@@ -11,6 +11,7 @@ import Yetkilendirme from "./components/Yetkilendirme";
 import Kalk from "./components/Kalk";
 import Alışişlemi from "./components/Alışişlemi";
 import Satışişlemi from "./components/Satışişlemi";
+import Urun from "./components/Urun";
 import { Link } from "react-router-dom";
 import depo from "../src/depo.png"
 
@@ -81,6 +82,7 @@ const App = (props) => {
                 <span>Yetkilendirme</span>
               </button>
             </Link>
+            <button onClick={()=>console.log(props.mydata)}>state</button>
           </div>
         </nav>
 
@@ -88,6 +90,12 @@ const App = (props) => {
           {props.mydata.giriş ? <Kalk /> : <Personel />}
         </div>
       </div>
+
+      <Route
+        path={`/urun_${props.mydata.alınıyor2}`.toLowerCase()}
+        exact
+        component={Alışişlemi}
+      />
 
       <Route
         path={`/işlemler/alış_${props.mydata.alınıyor2}`.toLowerCase()}
@@ -104,6 +112,7 @@ const App = (props) => {
       <Route path="/satış" exact component={Stokcikis} />
       <Route path="/işlemler" exact component={Işlemler} />
       <Route path="/yetkilendirme" exact component={Yetkilendirme} />
+      <Route path={`/${props.mydata.urun2}`.toLowerCase()} exact component={Urun} />
     </div>
   );
 };

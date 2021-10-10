@@ -36,7 +36,7 @@ const DepoGiriş = (props) => {
 
 
   return (
-    <div >
+    <div>
       <br />
       <h2 className="anaBaşlık">Satın Alma Belgesi Girişi</h2>
       <div
@@ -150,9 +150,6 @@ const DepoGiriş = (props) => {
               Alış Tarihi *
             </label>
             <input
-
-
-
               min="1899-01-01"
               max={today}
               type="date"
@@ -180,11 +177,12 @@ const DepoGiriş = (props) => {
               <th scope="col">Birim</th>
             </tr>
           </thead>
-          <tbody className="deneme2">
+          <tbody lassName="idid1" className="deneme2">
             {props.mydata.alınıyor.map((item) => (
               <tr key={Math.random()}>
-                <th>
+                <th className="idid1">
                   <svg
+                    lassName="idid1"
                     onClick={() => props.sil(item.id)}
                     style={{ cursor: "pointer" }}
                     color="red"
@@ -198,16 +196,17 @@ const DepoGiriş = (props) => {
                     <path d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z" />
                   </svg>
                 </th>
-                <th>{item.id}</th>
-                <td>{item.ürün}</td>
-                <td>
+                <th className="idid1">{item.id}</th>
+                <td className="idid1">{item.ürün}</td>
+                <td className="idid1">
                   <img className="listemm" width={"40"} src={item.fotograf} />
                 </td>
-                <td>{item.sınıf}</td>
-                <td>
+                <td className="idid1">{item.sınıf}</td>
+                <td className="idid1">
                   <Deneme props={props} item={item} />
                 </td>
-                <td>{item.birim}</td>
+
+                <td className="idid1">{item.birim}</td>
               </tr>
             ))}
           </tbody>

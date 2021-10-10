@@ -13,6 +13,7 @@ import {
   alınıyor2,
   satılıyor,
   yapılanSatışlar,
+  urun2,
 } from "../data";
 
 const INITIAL_STATE = {
@@ -29,6 +30,7 @@ const INITIAL_STATE = {
   alınıyor2,
   satılıyor,
   yapılanSatışlar,
+  urun2,
 };
 
 export const reducer = (state = INITIAL_STATE, action) => {
@@ -413,6 +415,12 @@ export const reducer = (state = INITIAL_STATE, action) => {
         personel: state.personel.filter(
           (pers) => pers.kullanıcıAdı !== action.payload
         ),
+      };
+    case "URUN2":
+
+    return {
+        ...state,
+        urun2: action.payload
       };
 
     default:

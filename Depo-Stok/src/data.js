@@ -197,5 +197,87 @@ export const sınıflar = ["çikolata", "sıvı yağ", "makarna", "çay", "pirin
 export const birimler = ["adet", "kg", "gr", "cm", "mt"];
 export const alınıyor2 = [""];
 export const satılıyor2 = [""];
-export const yapılanAlışlar = []
+export const urun2 = [""];
+export const yapılanAlışlar = [
+  
+    [
+      {
+        alıcı: "",
+        alınanŞirket: "23",
+        açıklama: "",
+        belgeNo: "123",
+        satıcı: "",
+        tarih: "2021-09-29",
+        onayVerenKullanıcı: "Admin",
+        onayTarihi: "08.10.2021",
+      },
+      [
+        {
+          id: "Depo001",
+          ürün: "Filiz Fiyonk Makarna 500 gr",
+          sınıf: "makarna",
+          stok: 0,
+          birim: "paket",
+          fotograf:
+            "https://cdn.getir.com/product/5cf27249130f3a00011f4d99_tr_1586450111921.jpeg",
+          artı: 1,
+        },
+        {
+          id: "Depo002",
+          ürün: "Nuh'un Ankara Spaghetti Makarna 500 gr",
+          sınıf: "makarna",
+          stok: 0,
+          birim: "paket",
+          fotograf:
+            "https://cdn.getir.com/product/559fb12df462100c00461494.jpeg",
+          artı: 2,
+        },
+      ],
+    ],
+    [
+      {
+        alıcı: "",
+        alınanŞirket: "32",
+        açıklama: "",
+        belgeNo: "32",
+        satıcı: "",
+        tarih: "2021-10-03",
+        onayVerenKullanıcı: "Admin",
+        onayTarihi: "08.10.2021",
+      },
+      [
+        {
+          id: "Depo001",
+          ürün: "Filiz Fiyonk Makarna 500 gr",
+          sınıf: "makarna",
+          stok: 1,
+          birim: "paket",
+          fotograf:
+            "https://cdn.getir.com/product/5cf27249130f3a00011f4d99_tr_1586450111921.jpeg",
+          artı: 3,
+        },
+        {
+          id: "Depo002",
+          ürün: "Nuh'un Ankara Spaghetti Makarna 500 gr",
+          sınıf: "makarna",
+          stok: 2,
+          birim: "paket",
+          fotograf:
+            "https://cdn.getir.com/product/559fb12df462100c00461494.jpeg",
+          artı: 4,
+        },
+        {
+          id: "Depo003",
+          ürün: "Nuh'un Ankara Fiyonk Makarna 500 gr",
+          sınıf: "makarna",
+          stok: 0,
+          birim: "paket",
+          fotograf:
+            "https://cdn.getir.com/product/559fb113f462100c0046148f.jpeg",
+          artı: 5,
+        },
+      ],
+    
+  ],
+];
 export const yapılanSatışlar = []

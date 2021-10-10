@@ -68,14 +68,14 @@ const Alışişlemi = (props) => {
           <tbody className="deneme3">
             {alış[1].map((item) => (
               <tr key={Math.random()}>
-                <th>{item.id}</th>
-                <td>{item.ürün}</td>
-                <td>
+                <th className="idid1"  >{item.id}</th>
+                <td className="idid1" >{item.ürün}</td>
+                <td className="idid1" >
                   <img className="listemm" width={"40"} src={item.fotograf} />
                 </td>
-                <td>{item.sınıf}</td>
-                <td>{item.artı}</td>
-                <td>{item.birim}</td>
+                <td className="idid1" >{item.sınıf}</td>
+                <td className="idid1" >{item.artı}</td>
+                <td className="idid1" >{item.birim}</td>
               </tr>
             ))}
           </tbody>

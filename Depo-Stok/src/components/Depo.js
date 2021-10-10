@@ -1,7 +1,13 @@
 import React from 'react'
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import {
+
+  urun2,
+} from "../actions";
 
  const Depo = (props) => {
+
     return (
       <div className="depoo">
         <br />
@@ -23,11 +29,15 @@ import { connect } from "react-redux";
           <tbody>
             {props.mydata.data.map((item) => (
               <tr key={Math.random()}>
-                <th>{item.id}</th>
-                <td>{item.ürün}</td>
-                <td>{item.stok}</td>
-                <td>{item.birim}</td>
-                <td>{item.sınıf}</td>
+                <Link className="idid" to={`/${item.id}`.toLowerCase()}>
+                  <th className="idid" onClick={() => props.urun2(item.id)}>
+                    {item.id}
+                  </th>
+                </Link>
+                <td className="idid1">{item.ürün}</td>
+                <td className="idid1">{item.stok}</td>
+                <td className="idid1">{item.birim}</td>
+                <td className="idid1">{item.sınıf}</td>
                 <td>
                   <img className="listemm" width={"40"} src={item.fotograf} />
                 </td>
@@ -45,4 +55,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, {  })(Depo);
+export default connect(mapStateToProps, {  urun2})(Depo);
